@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&display=swap" 
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Personal Website</title>
+</head>
+<body>
+    <header>
+        <!-- Start of navigation -->
+        <div class="navbar">
+            <div><img src="{{ url_for('static', filename='images/left_snake.png') }}"></div>
+            <ul>
+                <li><a href="{{ url_for('home') }}"> Home </a></li>
+                <li><a href="{{ url_for('about') }}"> About Me </a></li>
+                <li><a href="{{ url_for('projects') }}"> Projects </a></li>
+                <li><a href="{{ url_for('interests') }}"> Interests </a></li>
+            </ul>
+            <div><img src="{{ url_for('static', filename='images/right_snake.png') }}"></div>
+        </div>
+        <!-- End of navigation -->
+    </header>
+
+    <main>
+        <!-- Main Home -->
+        <p class="text-4xl text-center text-jasmine py-7"> Welcome! </p>
+        <div class="flex justify-evenly py-7">
+            <div class="w-[70%] text-[31px] text-center content-center">
+                <p> Hi, I'm Maimuna. </p>
+                <p> This is my silly little online world. </p>
+                <p> Learn some random things about me. </p>
+                <p> Take a look at my projects. </p>
+                <p> See my hobby projects :) &#9733;. </p>
+            </div>
+            <div class="w-[30%] text-center content-center">
+                <img class="w-[60%] border-10 border-double border-jasmine" src="{{ url_for('static', filename='images/meeee.png') }}" alt="My Profile Picture">
+            </div>
+        </div>
+
+        <!-- gacha machine -->
+        <div class="text-center py-5 flex items-center justify-center flex-col">
+            <p class="text-3xl text-jasmine py-3">Roll the music gacha!</p>
+            <p class="text-xl text-jasmine py-3">Can be anything from my liked songs (some unconventional songs in there)</p>
+            <div class="bg-jasmine rounded-2xl w-31 h-31 center flex items-center border-2 border-bottle-green flex-col justify-end">
+                <div class="flex"> 
+                    <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-green rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                </div>
+                <div class="flex">
+                    <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-bottle-green rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-dark-green rounded-full shadow-inner"></div>
+                </div>
+                <div class="flex">
+                    <div class="w-7 h-7 bg-dark-green rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-bottle-green rounded-full shadow-inner"></div>
+                    <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
+                </div>
+            </div>
+            <!-- The Base (Trapezoid) -->
+            <div class="w-43 h-31 bg-jasmine [clip-path:polygon(25%_0%,75%_0%,100%_100%,0%_100%)] flex items-center justify-evenly shadow-lg border-2 border-bottle-green flex-col">
+                <!-- Coin Slot / Knob -->
+                <!-- Gacha Machine Graphic/Button -->
+                <button id="roll-btn" class="bg-bottle-green text-jasmine text-center text-[23px] w-13 h-9 rounded-full shadow-lg hover:bg-opacity-90">
+                Roll</button>
+                <!-- <div class="w-13 h-9 bg-bottle-green rounded-full mt-2"></div> -->
+                <div class="w-15 h-5 bg-bottle-green mt-2"></div>
+            </div>
+        
+            <!-- Drop-out Card (Initially Hidden with Tailwind's 'hidden' class) -->
+            <div id="gacha-card" class="hidden mt-6 max-w-sm mx-auto bg-nyanza border-2 border-bottle-green rounded-xl p-6 shadow-lg flex items-center space-x-4 transition-all duration-300">
+                <img id="gacha-img" src="" alt="Album Art" class="w-20 h-20 rounded-md object-cover">
+                <div class="text-left">
+                    <h4 id="gacha-title" class="font-bold text-lg text-dark-green">Song Title</h4>
+                    <p id="gacha-artist" class="text-sm text-gray-600">Artist Name</p>
+                    <a id="gacha-link" href="#" target="_blank" class="text-xs text-blue-500 underline mt-1 inline-block">Listen on Spotify ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of main home -->
+    </main>
+
+    <footer>
+        <p class="text-3xl text-center text-dark-green font-bold pt-7"> Contact & Socials </p>
+        <div class="contact">
+            <ul>
+                <li><a href="https://github.com/MaimunaU" target="_blank"> GitHub </a></li>
+                <li><a href="https://www.linkedin.com/in/maimuna-ullah-29507430b/" target="_blank"> LinkedIn </a></li>
+            </ul>
+        </div>
+        <p class="pb-7">&copy; 2025-2026 Maimuna Ullah</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&display=swap" 
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Personal Website</title>
+</head>
+<body>
+    <header>
+        <!-- Start of navigation -->
+        <div class="navbar">
+            <div><img src="{{ url_for('static', filename='images/left_snake.png') }}"></div>
+            <ul>
+                <li><a href="{{ url_for('home') }}"> Home </a></li>
+                <li><a href="{{ url_for('about') }}"> About Me </a></li>
+                <li><a href="{{ url_for('projects') }}"> Projects </a></li>
+                <li><a href="{{ url_for('interests') }}"> Interests </a></li>
+            </ul>
+            <div><img src="{{ url_for('static', filename='images/right_snake.png') }}"></div>
+        </div>
+        <!-- End of navigation -->
+    </header>
+
+    <main>
+        <p class="text-4xl text-center text-jasmine py-7">Projects</p>
+        <p class="text-[24px] text-center text-sea-green py-7">These are some programming projects I've worked on!<br>Click on a project to learn more about it and my involvement.</p>
+        <p class="in-progress">In Progress</p>
+        <div class="progress-projs">
+            <div class="proj-container">
+                <button id="todo" class="proj-button" data-modal="todo-modal">To-do App<img class="img" src="{{ url_for('static', filename='images/todo-final-main.png') }}" alt="To-do App final main page design"></button>
+                <div id="todo-modal" class="modal">
+                    <div class="modal-content">
+                        <div class="left-side" data-images='["{{ url_for('static', filename='images/todo-login.png') }}", "{{ url_for('static', filename='images/todo-final-main.png') }}", "{{ url_for('static', filename='images/tasks.png') }}", "{{ url_for('static', filename='images/todo-design1.png') }}", "{{ url_for('static', filename='images/task-habits.png') }}", "{{ url_for('static', filename='images/completed-tasks.png') }}", "{{ url_for('static', filename='images/habit-edit.png') }}", "{{ url_for('static', filename='images/todo-main.png') }}"]'>
+                            <img class="current-img" src="{{ url_for('static', filename='images/todo-login.png') }}" alt="To-do App login page design">
+                            <div class="slide">
+                                <button class="prev">&lt;</button>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <ul>
+                                <li>React (JSX), Tailwind CSS, GitHub, Git, VS Code</li>                            
+                                <li>Full-stack MERN application for practice</li>
+                                <li>Implemented CRUD functionality (Create, Read, Update, Delete) via RESTful APIs</li>
+                                <li>Frontend built using React (JSX) and Tailwind CSS for responsive design</li>
+                                <li>Backend uses Node.js and connects to MongoDB Atlas.</li>
+                            </ul>
+                            <hr>
+                            <ul>
+                                <li>Initially based on a Youtube tutorial</li>
+                                <li>Added my own features and changed design</li>
+                                <li>Decided on a tasks/to-do list and habit tracker</li>
+                                <li>Moved completed tasks to separate space with a date completed</li>
+                                <li>Added optional due date feature, avaiable in edit mode</li>
+                                <li>Weekly habit tracker, can edit the name and days of the week</li>
+                                <li>Added users, login, and simple authentication</li>
+                            </ul>
+                            <hr>
+                            <ul>
+                                <li>Planned Next Steps:</li>
+                                <ul>
+                                    <li>Develop habit summary/analysis, with streak data, display monthly?</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <p class="complete">Complete</p>
+        <div class="complete-projs">
+            <div class="proj-container">
+                <button id="pdm" class="proj-button" data-modal="pdm-modal">Music Domain Database Application<img class="img" src="{{ url_for('static', filename='images/main-menu.png') }}" alt="Database App main menu"></button>
+                <div id="pdm-modal" class="modal">
+                    <div class="modal-content">
+                        <div class="left-side" data-images='["{{ url_for('static', filename='images/main-menu.png') }}", "{{ url_for('static', filename='images/top-songs.png') }}", "{{ url_for('static', filename='images/pdm-eer.png') }}", "{{ url_for('static', filename='images/pdm-poster.png') }}"]'>
+                            <img class="current-img" src="{{ url_for('static', filename='images/main-menu.png') }}" alt="Database App main menu">
+                            <div class="slide">
+                                <button class="prev">&lt;</button>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <ul>
+                                <li>Java, PostgreSQL, DataGrip, GitHub, Git, VS Code</li>
+                                <li>Semester long project for Principles of Data Management</li>
+                                <li>I worked in a team of four to create a music database and 
+                                    access it for a fake listening application.</li>
+                                <li>This was a three-phase project, roughly split by these 3 focuses</li>
+                                    <ul>
+                                        <li>relational database schema setup and implementation in DataGrip</li>
+                                        <li>application creation with database integration</li>
+                                        <li>simple data analysis using PostgreSQL query results</li>
+                                    </ul>
+                                <li>I applied knowledge of relational databases to design and implement a 
+                                    database schema.</li>
+                                <li>I wrote PostgreSQL queries for data analysis.</li>
+                            </ul>
+                        </div>
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="proj-container">
+                <button id="lights-out" class="proj-button" data-modal="lights-modal">Lights Out Puzzle GUI<img class="img" src="{{ url_for('static', filename='images/lights-out.png') }}" alt="Lights out game GUI"></button>
+                <div id="lights-modal" class="modal">
+                    <div class="modal-content">
+                        <div class="left-side" data-images='["{{ url_for('static', filename='images/lights-out.png') }}", "{{ url_for('static', filename='images/lights-pre-win.png') }}", "{{ url_for('static', filename='images/lights-win.png') }}"]'>
+                            <img class="current-img" src="{{ url_for('static', filename='images/lights-out.png') }}" alt="Lights out game GUI">
+                            <div class="slide">
+                                <button class="prev">&lt;</button>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <ul>
+                                <li>JavaFx, GitHub, Git, IntelliJ</li>
+                                <li>Assignment for Computer Science for AP Students</li>
+                                <li>I worked on the GUI for the Lights Out puzzle game.</li>
+                                <li>The display is made up of 3 main sections.</li>
+                                <ul>
+                                    <li>A message bar at the top that displays the number 
+                                        of moves made and general messages or hints</li>
+                                    <li>A 5x5 grid of buttons</li>
+                                    <li>3 buttons below the grid to start a random game 
+                                        (New Game), load in your own board (Load Board), 
+                                        or get a hint (Hint)</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="proj-container">
+                <button id="final-web" class="proj-button" data-modal="final-web-modal">Web Development Final Project<img class="img" src="{{ url_for('static', filename='images/final-proj-home.png') }}" alt="Final project home page design"></button>
+                <div id="final-web-modal" class="modal">
+                    <div class="modal-content">
+                        <div class="left-side" data-images='["{{ url_for('static', filename='images/final-proj-home.png') }}", "{{ url_for('static', filename='images/final-proj-top.png') }}", "{{ url_for('static', filename='images/final-proj-bottom.png') }}", "{{ url_for('static', filename='images/final-proj-mobile.png') }}"]'>
+                            <img class="current-img" src="{{ url_for('static', filename='images/final-proj-home.png') }}" alt="Final project home page design">
+                            <div class="slide">
+                                <button class="prev">&lt;</button>
+                                <button class="next">&gt;</button>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <ul>
+                                <li>HTML, CSS, GitHub, Git, VS Code</li>
+                                <li>Final project for my Web Development class in high school</li>
+                                <li>I collaborated with a partner to create a multi-page website.</li>
+                                <li>Designed and implemented three pages (“Home”, “Snakes”, and “Turtles”) with features like</li>
+                                <ul>
+                                    <li>a navbar</li>
+                                    <li>grid display</li>
+                                    <li>tables</li>
+                                    <li>responsive to different screen sizes</li>
+                                </ul>
+                                <li><a href="https://maimunau.github.io/FinalProject/" target="_blank">https://maimunau.github.io/FinalProject/</a></li>
+                            </ul>
+                        </div>
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="text-3xl text-center text-dark-green font-bold pt-7"> Contact & Socials </p>
+        <div class="contact">
+            <ul>
+                <li><a href="https://github.com/MaimunaU" target="_blank"> GitHub </a></li>
+                <li><a href="https://www.linkedin.com/in/maimuna-ullah-29507430b/" target="_blank"> LinkedIn </a></li>
+            </ul>
+        </div>
+        <p class="pb-7">&copy; 2025-2026 Maimuna Ullah</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&display=swap" 
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Personal Website</title>
+</head>
+<body>
+    <header>
+        <!-- Start of navigation -->
+        <div class="navbar">
+            <div><img src="{{ url_for('static', filename='images/left_snake.png') }}"></div>
+            <ul>
+                <li><a href="{{ url_for('home') }}"> Home </a></li>
+                <li><a href="{{ url_for('about') }}"> About Me </a></li>
+                <li><a href="{{ url_for('projects') }}"> Projects </a></li>
+                <li><a href="{{ url_for('interests') }}"> Interests </a></li>
+            </ul>
+            <div><img src="{{ url_for('static', filename='images/right_snake.png') }}"></div>
+        </div>
+        <!-- End of navigation -->
+    </header>
+
+    <main>
+        <div class="main">
+            <p class="text-4xl text-center text-jasmine pt-7">Interests</p>
+            <p class="text-[24px] text-center text-sea-green py-7">A small glimpse into my hobbies and interests.</p>
+            <div class="posts">
+                <!-- Small cat stuffy b-day gift -->
+                <div class="post-s">
+                    <div class="col">
+                        <div class="circle">
+                            <img src="{{ url_for('static', filename='images/pre-cat.png') }}" alt="Cat stuffie process pic">
+                        </div>
+                        <div class="circle">
+                            <img src="{{ url_for('static', filename='images/cat-back.png') }}" alt="Cat stuffie back">
+                        </div>
+                    </div>
+                    <div class="oval">
+                        <img src="{{ url_for('static', filename='images/cat-front.png') }}" alt="Cat stuffie front">
+                    </div>
+                    <div class="blob">
+                        <p>A birthday gift for a friend. My first complete stuffed creation as a gift. I need to practice closing stitch more. Stars are so hard. I will definitely be making more of these little guys. Super cute and doesn't take very long.</p>
+                    </div>
+                </div>
+                <div class="post-b">
+                    <div class="col">
+                        <div>
+                            <img src="{{ url_for('static', filename='images/tie.png') }}" alt="Tie">
+                            <img src="{{ url_for('static', filename='images/tie-knot.png') }}" alt="Tie knot">
+                            <img src="{{ url_for('static', filename='images/tie-tip.png') }}" alt="Tie tip">
+                            <img src="{{ url_for('static', filename='images/wear-tie.png') }}" alt="Me wearing the tie">
+                        </div>
+                        <p>The moment I saw this fabric I knew I wanted to make a tie with it. Kind of went with the flow and didn't use a pattern, so the thickness throughout is a little odd and knotting it is finicky, but I still love it :)</p>
+                    </div>
+                </div>
+                <div class="post-s">
+                    <div class="star">
+                        <img src="{{ url_for('static', filename='images/star-front.png') }}" alt="Star stuffie keychain front">
+                    </div>
+                    <div class="star">
+                        <img src="{{ url_for('static', filename='images/star-back.png') }}" alt="Star stuffie keychain back">
+                    </div>
+                    <div class="star">
+                        <div class="star-text">
+                            <span>My first stuffed creation.</span>
+                            <span>Was bored and wanted to make</span> 
+                            <span>something. Decided on a</span> 
+                            <span>small-scale stuffed piece.</span>
+                            <span>Did some stitching in a</span>
+                            <span>state of creative drift.</span>
+                            <span>You can never go</span>
+                            <span>wrong with swirls.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="text-3xl text-center text-dark-green font-bold pt-7"> Contact & Socials </p>
+        <div class="contact">
+            <ul>
+                <li><a href="https://github.com/MaimunaU" target="_blank"> GitHub </a></li>
+                <li><a href="https://www.linkedin.com/in/maimuna-ullah-29507430b/" target="_blank"> LinkedIn </a></li>
+            </ul>
+        </div>
+        <p class="pb-7">&copy; 2025-2026 Maimuna Ullah</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
