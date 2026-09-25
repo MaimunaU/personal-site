@@ -45,48 +45,89 @@
             </div>
         </div>
 
-        <!-- gacha machine -->
-        <div class="text-center py-5 flex items-center justify-center flex-col">
-            <p class="text-3xl text-jasmine py-3">Roll the music gacha!</p>
-            <p class="text-xl text-jasmine py-3">Can be anything from my liked songs (some unconventional songs in there)</p>
-            <div class="bg-jasmine rounded-2xl w-31 h-31 center flex items-center border-2 border-bottle-green flex-col justify-end">
-                <div class="flex"> 
-                    <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-green rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+        <!-- random pulls -->
+        <p class="text-3xl text-jasmine py-3 text-center">MYSTERY DROPS!!</p>
+        <div class="flex justify-evenly items-center">
+            <!-- music pulls -->
+            <div class="text-center flex py-3 items-center justify-center flex-col">
+                <p class="text-xl text-jasmine py-3">Roll for a song drop!</p>
+                <div class="bg-jasmine rounded-2xl w-31 h-43 center flex items-center border-2 border-bottle-green flex-col justify-end">
+                    <div class="flex"> 
+                        <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-bottle-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-dark-green rounded-full shadow-inner"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="w-7 h-7 bg-dark-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-bottle-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
+                    </div>
+                    <div class="flex"> 
+                        <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                    </div>
                 </div>
-                <div class="flex">
-                    <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-bottle-green rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-dark-green rounded-full shadow-inner"></div>
+                <!-- The Base (Trapezoid) -->
+                <div class="w-43 h-31 bg-jasmine [clip-path:polygon(25%_0%,75%_0%,100%_100%,0%_100%)] flex items-center justify-evenly shadow-lg border-2 border-bottle-green flex-col">
+                    <!-- Coin Slot / Knob -->
+                    <!-- Gacha Machine Graphic/Button -->
+                    <button id="roll-btn" class="bg-jasmine border-2 border-bottle-green rounded-full p-2 text-[22px] shadow-dark-green shadow-md">
+                    Roll</button>
+                    <div class="w-15 h-5 bg-bottle-green mt-2"></div>
                 </div>
-                <div class="flex">
-                    <div class="w-7 h-7 bg-dark-green rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-bottle-green rounded-full shadow-inner"></div>
-                    <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
+            
+                <!-- Drop-out Card (Initially Hidden with Tailwind's 'hidden' class) -->
+                <div id="gacha-card" class="hidden mt-6 max-w-sm mx-auto bg-nyanza border-2 border-bottle-green rounded-xl p-6 shadow-lg flex items-center space-x-4 transition-all duration-300">
+                    <img id="gacha-img" src="" alt="Album Art" class="w-20 h-20 rounded-md object-cover">
+                    <div class="text-left">
+                        <h4 id="gacha-title" class="font-bold text-lg text-dark-green">Song Title</h4>
+                        <p id="gacha-artist" class="text-sm text-gray-600">Artist Name</p>
+                        <a id="gacha-link" href="#" target="_blank" class="text-xs text-blue-500 underline mt-1 inline-block">Listen on Spotify ↗</a>
+                    </div>
                 </div>
             </div>
-            <!-- The Base (Trapezoid) -->
-            <div class="w-43 h-31 bg-jasmine [clip-path:polygon(25%_0%,75%_0%,100%_100%,0%_100%)] flex items-center justify-evenly shadow-lg border-2 border-bottle-green flex-col">
-                <!-- Coin Slot / Knob -->
-                <!-- Gacha Machine Graphic/Button -->
-                <button id="roll-btn" class="bg-bottle-green text-jasmine text-center text-[23px] w-13 h-9 rounded-full shadow-lg hover:bg-opacity-90">
-                Roll</button>
-                <!-- <div class="w-13 h-9 bg-bottle-green rounded-full mt-2"></div> -->
-                <div class="w-15 h-5 bg-bottle-green mt-2"></div>
-            </div>
-        
-            <!-- Drop-out Card (Initially Hidden with Tailwind's 'hidden' class) -->
-            <div id="gacha-card" class="hidden mt-6 max-w-sm mx-auto bg-nyanza border-2 border-bottle-green rounded-xl p-6 shadow-lg flex items-center space-x-4 transition-all duration-300">
-                <img id="gacha-img" src="" alt="Album Art" class="w-20 h-20 rounded-md object-cover">
-                <div class="text-left">
-                    <h4 id="gacha-title" class="font-bold text-lg text-dark-green">Song Title</h4>
-                    <p id="gacha-artist" class="text-sm text-gray-600">Artist Name</p>
-                    <a id="gacha-link" href="#" target="_blank" class="text-xs text-blue-500 underline mt-1 inline-block">Listen on Spotify ↗</a>
+
+            <!-- pixel art pulls -->
+            <div class="text-center flex py-3 items-center justify-center flex-col">
+                <p class="text-xl text-jasmine py-3">Roll for a pixel art drop!</p>
+                <div class="bg-jasmine rounded-2xl w-31 h-31 center flex items-center border-2 border-bottle-green flex-col justify-end">
+                    <div class="flex"> 
+                        <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-bottle-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-pakistan-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-dark-green rounded-full shadow-inner"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="w-7 h-7 bg-dark-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-nyanza rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-bottle-green rounded-full shadow-inner"></div>
+                        <div class="w-7 h-7 bg-sea-green rounded-full shadow-inner"></div>
+                    </div>
                 </div>
+                <!-- The Base (Trapezoid) -->
+                <div class="w-43 h-31 bg-jasmine [clip-path:polygon(25%_0%,75%_0%,100%_100%,0%_100%)] flex items-center justify-evenly shadow-lg border-2 border-bottle-green flex-col">
+                    <!-- Gacha Machine Graphic/Button -->
+                    <button id="pixel-btn" class="bg-bottle-green text-jasmine text-center text-[23px] w-13 h-9 rounded-full shadow-lg">Roll</button>
+                    <div class="w-15 h-5 bg-bottle-green mt-2"></div>
+                </div>
+
+                <div id="art-container" class="mt-6 flex flex-col items-center justify-center"></div>
             </div>
         </div>
 

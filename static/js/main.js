@@ -69,4 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error("Failed to pull gacha:", err);
       }
   });
+
+  document.getElementById('pixel-btn').addEventListener('click', async () => {
+    const response = await fetch('/api/pixel-art');
+    const data = await response.json();
+
+    // Inject the raw SVG string directly into the webpage
+    document.getElementById('art-container').innerHTML = data.svg;
+  });
 });

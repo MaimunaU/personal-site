@@ -1,4 +1,4 @@
-import json, random, os
+import json, random, os, pyfiglet
 from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
@@ -59,6 +59,37 @@ def pull_gacha():
     # Pick a random song from your entire library
     chosen_song = random.choice(ALL_SONGS)
     return jsonify(chosen_song)
+
+@app.route('/api/pixel-art', methods=['GET'])
+def generate_pixel_art():
+
+    hue = random.randint(30, 270)
+    main_color = f"hsl({hue}, 50%, 70%)"
+    bg_color = "black"
+    
+    # Start building the SVG code string
+    # We use a 10x10 grid coordinate system
+    svg_parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="200" height="200">']
+    svg_parts.append(f'<rect width="10" height="10" fill="{bg_color}"/>')
+    
+    # Loop through rows (0 to 9) and columns (0 to 4 - only the left half!)
+    for y in range(10):
+        for x in range(5):
+            # 50% chance a block is filled
+            if random.choice([True, False]):
+                # 1. Draw the pixel on the left side
+                svg_parts.append(f'<rect x="{x}" y="{y}" width="1" height="1" fill="{main_color}"/>')
+                
+                # 2. Automatically mirror it to the right side (column 9 down to 5)
+                mirror_x = 9 - x
+                svg_parts.append(f'<rect x="{mirror_x}" y="{y}" width="1" height="1" fill="{main_color}"/>')
+                
+    svg_parts.append('</svg>')
+    
+    # Combine everything into one string of valid SVG code
+    svg_string = "".join(svg_parts)
+    
+    return jsonify({"svg": svg_string})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
